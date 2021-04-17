@@ -1,2 +1,20 @@
 <p>contact-list works!</p>
 <!-- Have the *ngIf stuff for button clicks -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        
+            <app-contact *ngFor="let con of cList;"
+            [contactInput]="con">
+        </app-contact>
+        
+      </div>
+      <div class="col-sm">
+        One of three columns edit
+      </div>
+      <div class="col-sm">
+        One of three columns add
+      </div>
+    </div>
+  </div>
