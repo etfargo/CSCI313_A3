@@ -27,5 +27,9 @@ export class ContactsService {
     this.CONTACTS.push(contact);
   }
 
+  findContactbyFullName(name: string) {
+    return this.CONTACTS.find(contact => contact.fName + " " + contact.lName === name);
+  }
+  
   constructor() { }
 }
