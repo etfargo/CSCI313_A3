@@ -22,5 +22,10 @@ export class ContactsService {
         email: "doejane@gmail.com"
     },
   ];
+
+  addContact(contact: Contact):void {
+    this.CONTACTS.push(contact);
+  }
+
   constructor() { }
 }
