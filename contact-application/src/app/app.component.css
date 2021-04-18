@@ -1,0 +1,8 @@
+.card {
+    margin-top: 15px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+body, head, footer {
+    background-color: rgb(92, 39, 39);
+}
