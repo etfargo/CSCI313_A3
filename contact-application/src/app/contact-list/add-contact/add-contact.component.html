@@ -1,31 +1,28 @@
-<p>add-contact works!</p>
 <div class="container">
     <div class="card">
-      <div class="card-body">
-        <h5>Add Contact</h5>
-        <hr />
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="First Name" 
-                aria-label="firstName" #firstName required>
+        <div class="card-body">
+            <h5>Add Contact</h5>
+            <hr />
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="First Name" aria-label="firstName" #firstName
+                    required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Last Name" aria-label="lastName" #lastName
+                    required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Phone Number" aria-label="phoneNumber" #phoneNumber
+                    required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="email" aria-label="email" #email required>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-primary justify-content-md-end"
+                    (click)="submit(firstName.value, lastName.value, phoneNumber.value, email.value)">Submit</button>
+            </div>
+
         </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Last Name" 
-                aria-label="lastName" #lastName required>
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Phone Number" 
-                aria-label="phoneNumber" #phoneNumber required>
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="email" 
-            aria-label="email" #email required>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="btn btn-primary justify-content-md-end"
-            (click)="submit(firstName.value, lastName.value, phoneNumber.value, email.value)"
-            >Submit</button>
-        </div>
-        
-      </div>
     </div>
-  </div>
+</div>
