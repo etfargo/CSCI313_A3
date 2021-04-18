@@ -3,15 +3,16 @@
 <div class="container">
     <div class="row">
       <div class="col-sm">
-        
         <app-contact 
             *ngFor="let con of cList;"
-            [contactInput]="con">
+            [contactInput]="con"
+            (editEvent)="editContactP()">
         </app-contact>
-        
       </div>
-      <div class="col-sm">
-        One of three columns edit
+      <div class="col-sm" >
+        <div *ngIf="editSelected">
+          <app-edit-contact></app-edit-contact>
+        </div>
       </div>
       <div class="col-sm">
         <app-add-contact></app-add-contact>

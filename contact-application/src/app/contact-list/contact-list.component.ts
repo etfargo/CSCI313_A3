@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
+import { Contact } from '../model/contact';
 
 @Component({
   selector: 'app-contact-list',
@@ -9,7 +10,14 @@ import { ContactsService } from '../contacts.service';
 export class ContactListComponent implements OnInit {
   cList = [];
 
+  editSelected:boolean = false;
+
   constructor(private cServ: ContactsService) { }
+
+  editContactP() {
+    this.editSelected = !this.editSelected;
+    console.log("edit in parent called")
+  }
 
   ngOnInit(): void {
     this.cList = this.cServ.CONTACTS; 

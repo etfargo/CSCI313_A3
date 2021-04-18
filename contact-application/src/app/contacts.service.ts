@@ -8,6 +8,8 @@ export class ContactsService {
   //needs array of contacts
   //fetch, add, edit, delete
 
+  contactEdit: Contact;
+
   CONTACTS: Contact[] = [
     {
         fName: "Billy",
@@ -22,6 +24,14 @@ export class ContactsService {
         email: "doejane@gmail.com"
     },
   ];
+
+  getContactForEdit(): Contact{
+    return this.contactEdit;
+  }
+
+  chooseContactToEdit(contact: Contact) {
+    this.contactEdit = contact;
+  }
 
   addContact(contact: Contact):void {
     this.CONTACTS.push(contact);

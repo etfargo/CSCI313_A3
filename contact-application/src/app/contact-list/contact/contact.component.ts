@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ContactsService } from 'src/app/contacts.service';
 import { Contact } from 'src/app/model/contact';
 
@@ -10,11 +10,14 @@ import { Contact } from 'src/app/model/contact';
 export class ContactComponent implements OnInit {
 
   @Input() contactInput: Contact;
-
-  edit: boolean = false;
+  editToggle: boolean = false;
+  @Output() editEvent = new EventEmitter<boolean>(); //@Output edit = new EventEmitter<boolean>(); 
 
   editContact() {
-    this.edit = !this.edit;
+    this.editToggle = !this.editToggle; //set to true, false
+    this.editEvent.emit(this.editToggle); //send value to parent for ngIf directive
+    this.cServ.chooseContactToEdit(this.contactInput); //set which contact in service to edit
+    console.log("edit contact in child clicked");
   }
 
   deleteContact() {
