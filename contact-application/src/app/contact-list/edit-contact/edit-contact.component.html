@@ -1,3 +1,46 @@
 <p>edit-contact works!</p>
 
 
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h5>Edit Contact</h5>
+        <hr />
+
+        <label for="firstName" class="form-label">First Name</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">{{ cEdit.fName }}</span>
+          <input type="text" class="form-control" id="firstName" aria-describedby="basic-addon3"
+          placeholder="New first name" #firstName>
+        </div>
+
+        <label for="lastName" class="form-label">Last Name</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">{{ cEdit.lName }}</span>
+          <input type="text" class="form-control" id="lastName" aria-describedby="basic-addon3"
+          placeholder="New last name" #lastName>
+        </div>
+
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">{{ cEdit.phoneNum }}</span>
+          <input type="text" class="form-control" id="phoneNumber" aria-describedby="basic-addon3"
+          placeholder="New phone number" #phoneNumber>
+        </div>
+
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">{{ cEdit.email }}</span>
+          <input type="text" class="form-control" id="email" aria-describedby="basic-addon3"
+          placeholder="New email" #email>
+        </div>
+    
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-primary justify-content-md-end"
+            (click)="submitEdits(firstName.value, lastName.value, phoneNumber.value, email.value)"
+            >Submit Changes</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>

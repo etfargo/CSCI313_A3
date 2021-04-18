@@ -25,6 +25,18 @@ export class ContactsService {
     },
   ];
 
+  editContact(index: number, newF: string, newL: string, newP: number, newE: string) {
+    //logic for changing the element at specified index
+    this.CONTACTS[index] = {fName: newF, lName: newL, phoneNum: newP, email: newE};
+    console.log("service edit contact");
+  }
+
+  getIndex(contact: Contact): number {
+    console.log(this.CONTACTS.findIndex(c => contact === c));
+    return this.CONTACTS.findIndex(c => contact === c);
+  }
+
+
   getContactForEdit(): Contact{
     return this.contactEdit;
   }
