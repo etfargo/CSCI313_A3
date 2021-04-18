@@ -1,5 +1,3 @@
-<p>contact works!</p>
-
 <div class="container">
     <div class="card">
       <div class="card-body">
@@ -9,6 +7,10 @@
             <br>
             Email at: {{ contactInput.email }}
         </p>
+      </div>
+      <div class="card-footer text-muted">
+        <button type="button" class="btn btn-primary btn2" (click)="editContact()"> Edit </button>
+        <button type="button" class="btn btn-danger btn2" (click)="deleteContact()"> Delete </button>
       </div>
     </div>
   </div>

@@ -27,6 +27,12 @@ export class ContactsService {
     this.CONTACTS.push(contact);
   }
 
+  deleteContact(cDel: Contact):void {
+    this.CONTACTS.forEach((contact, index) => {
+      if(contact==cDel) this.CONTACTS.splice(index, 1);
+    });
+  }
+
   findContactbyFullName(name: string) {
     return this.CONTACTS.find(contact => contact.fName + " " + contact.lName === name);
   }

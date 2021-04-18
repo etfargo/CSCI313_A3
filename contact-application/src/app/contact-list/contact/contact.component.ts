@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ContactsService } from 'src/app/contacts.service';
 import { Contact } from 'src/app/model/contact';
 
 @Component({
@@ -10,7 +11,16 @@ export class ContactComponent implements OnInit {
 
   @Input() contactInput: Contact;
 
-  constructor() { }
+  edit: boolean = false;
+
+  editContact() {
+    this.edit = !this.edit;
+  }
+
+  deleteContact() {
+    this.cServ.deleteContact(this.contactInput);
+  }
+  constructor(private cServ: ContactsService) { }
 
   ngOnInit(): void {
   }
