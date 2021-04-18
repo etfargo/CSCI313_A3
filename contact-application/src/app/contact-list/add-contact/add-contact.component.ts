@@ -10,12 +10,17 @@ import { Contact } from 'src/app/model/contact';
 export class AddContactComponent implements OnInit {
 
   cAdd: Contact;
-  submit() {
+  submit(f: string, l: string, p: number, e: string) {
     //need to create a contact to send give to addContact(contact)
     //let f: string = document.getElementById("firstName");
     
-    this.cAdd = {fName: "first", lName:"last", phoneNum: 909090909, email: "email@email.com"};
-    this.cServ.addContact(this.cAdd);
+    this.cAdd = {fName: f, lName: l, phoneNum: p, email: e};
+    if(f.length == 0 || l.length == 0 || p == 0 || e.length == 0 ) {
+      alert("Please fill out all fields");
+    }
+    else {
+      this.cServ.addContact(this.cAdd);
+    }
   }
   constructor(private cServ: ContactsService) { }
 
